@@ -13,5 +13,5 @@ echo '== Done =='
 
 echo '== For disable code signing on iOS device =='
 mv -n ${APP_PATH}/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist ${APP_PATH}/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.orig.plist
-cp ${C}/SDKSettings.plist ${APP_PATH}/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist
+plutil -replace DefaultProperties.CODE_SIGNING_REQUIRED -string "NO" ${APP_PATH}/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist
 echo '== Done =='
