@@ -12,6 +12,6 @@ cp ${C}/Embedded-Shared.xcspec ${APP_PATH}/Contents/PlugIns/IDEiOSSupportCore.id
 echo '== Done =='
 
 echo '== For disable code signing on iOS device =='
-mv -n ${APP_PATH}/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist ${APP_PATH}/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.orig.plist
+cp -n ${APP_PATH}/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist ${APP_PATH}/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.orig.plist
 plutil -replace DefaultProperties.CODE_SIGNING_REQUIRED -string "NO" ${APP_PATH}/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist
 echo '== Done =='
